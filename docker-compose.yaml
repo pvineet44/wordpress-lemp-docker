@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  # Database
+  db:
+    build: ./mariadb/
+    container_name: mariadbwp
+    entrypoint: sh home/root/init.sh
+    command: tail -F anything
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+    restart: always
+    networks:
+      - wpsite
+  #phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    build: ./phpmyadmin/
+    entrypoint: sh ../start.sh
+    command: tail -F anything
+    restart: always
+    ports:
+      - '1234:80'
+      - '1235:443'
+    networks:
+      - wpsite
+  # # Wordpress
+  # wordpress:
+  #   depends_on:
+  #     - db
+  #   image: wordpress:latest
+  #   ports:
+  #     - '1235:80'
+  #   restart: always
+  #   volumes: ['./:/var/www/html']
+  #   environment:
+  #     WORDPRESS_DB_HOST: db:3306
+  #     WORDPRESS_DB_USER: vparekh
+  #     WORDPRESS_DB_PASSWORD: wordpress
+  #     WORDPRESS_DB_NAME: wordpress
+  #   networks:
+  #     - wpsite
+networks:
+  wpsite:
+volumes:
+    mysql-dump:
