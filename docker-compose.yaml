@@ -9,8 +9,8 @@ services:
     command: tail -F anything
     ports:
       - '3306:3306'
-    volumes:
-      - ./mysql-dump:/docker-entrypoint-initdb.d
+    # volumes:
+    #   - ./mysql-dump:/docker-entrypoint-initdb.d
     restart: always
     networks:
       - wpsite

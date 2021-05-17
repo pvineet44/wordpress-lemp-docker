@@ -14,7 +14,7 @@ RUN apt install -y vim
 RUN apt install -y wget
 
 RUN echo ' \e[36m\e[1m=== Creating tables ===\e[0m'
-# COPY src/ft_server.sql /home/root/
+COPY src/ft_server.sql /home/root/
 COPY src/init.sh /home/root/
 COPY src/50-server.cnf /etc/mysql/mariadb.conf.d/
 RUN echo ' \e[36m\e[1m=== Starting services ===\e[0m'
