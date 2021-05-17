@@ -1,6 +1,6 @@
 echo "=== Starting MariaDB Service ==="
 
-PASS=$(sh ./decode.sh U2FsdGVkX1+7QmvSs5V1duRBr/qJCBOlBpJIoP/QFZM=)
+PASS=$(sh ./decode.sh U2FsdGVkX1+OXnQmiCHyB+p0gLv8bnNkJlKl8NHEtag=)
 
 
 service mysql start
