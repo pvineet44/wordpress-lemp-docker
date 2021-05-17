@@ -1,0 +1,3 @@
+Restart docker container:
+
+docker restart *container_name*
