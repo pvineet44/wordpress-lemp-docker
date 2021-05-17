@@ -4,7 +4,7 @@ services:
   # Database
   db:
     build: ./mariadb/
-    container_name: mariadbwp
+    container_name: mysql
     entrypoint: sh home/root/init.sh
     command: tail -F anything
     ports:
@@ -19,6 +19,7 @@ services:
     depends_on:
       - db
     build: ./phpmyadmin/
+    container_name: phpmyadmin
     entrypoint: sh ../start.sh
     command: tail -F anything
     restart: always
@@ -32,6 +33,7 @@ services:
     depends_on:
       - db
     build: ./wordpress/
+    container_name: wordpress
     entrypoint: sh ../start.sh
     command: tail -F anything
     ports:
