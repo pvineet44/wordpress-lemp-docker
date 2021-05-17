@@ -27,22 +27,20 @@ services:
       - '1235:443'
     networks:
       - wpsite
-  # # Wordpress
-  # wordpress:
-  #   depends_on:
-  #     - db
-  #   image: wordpress:latest
-  #   ports:
-  #     - '1235:80'
-  #   restart: always
-  #   volumes: ['./:/var/www/html']
-  #   environment:
-  #     WORDPRESS_DB_HOST: db:3306
-  #     WORDPRESS_DB_USER: vparekh
-  #     WORDPRESS_DB_PASSWORD: wordpress
-  #     WORDPRESS_DB_NAME: wordpress
-  #   networks:
-  #     - wpsite
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    build: ./wordpress/
+    entrypoint: sh ../start.sh
+    command: tail -F anything
+    ports:
+      - '1111:80'
+      - '1112:443'
+    restart: always
+    volumes: ['./:/var/www/html']
+    networks:
+      - wpsite
 networks:
   wpsite:
 volumes:

@@ -1,4 +1,4 @@
-ip=`ip address | grep "0.3/" | awk '{print $2}'`
+ip=`ip address | grep "172.*.0.*/" | awk '{print $2}'`
 cut_ip=${ip%.*}
 mysql_host=".2"
 new_ip=$cut_ip$mysql_host
