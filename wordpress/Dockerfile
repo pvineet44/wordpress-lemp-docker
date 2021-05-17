@@ -32,7 +32,7 @@ RUN wget https://github.com/FiloSottile/mkcert/releases/download/v1.1.2/mkcert-v
 RUN mv mkcert-v1.1.2-linux-amd64 mkcert
 RUN chmod +x mkcert
 RUN ./mkcert -install
-RUN ./mkcert localhost
+RUN ./mkcert propell.ml
 
 # We save extrenal IP
 #RUN echo $IP > ip.txt

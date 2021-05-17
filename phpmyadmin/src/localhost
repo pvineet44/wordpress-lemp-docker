@@ -10,8 +10,8 @@ server {
         #
         listen 443 ssl;
         listen [::]:443 ssl;
-        ssl_certificate /home/root/mkcert/localhost.pem;
-        ssl_certificate_key /home/root/mkcert/localhost-key.pem;
+        ssl_certificate /home/root/mkcert/propell.ml.pem;
+        ssl_certificate_key /home/root/mkcert/propell.ml-key.pem;
         #
         # Note: You should disable gzip for SSL traffic.
         # See: https://bugs.debian.org/773332
