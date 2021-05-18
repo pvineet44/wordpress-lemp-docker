@@ -444,7 +444,7 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'vparekh', '$P$BlUw6qW6qD1RIfuGC5e87fFDnm5S4w0', 'vparekh', 'vparekh@student.42.fr', '', '2019-11-15 22:41:56', '', 0, 'vparekh');
+(1, 'vparekh', '$P$Byz46A29KF1Lf7h4qd40VU/dOwI4w0/', 'vparekh', 'vparekh@student.42.fr', '', '2019-11-15 22:41:56', '', 0, 'vparekh');
 
 --
 -- Indexes for dumped tables
