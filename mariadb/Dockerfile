@@ -19,7 +19,7 @@ COPY src/init.sh /home/root/
 COPY src/decode.sh /home/root/
 COPY src/50-server.cnf /etc/mysql/mariadb.conf.d/
 RUN echo ' \e[36m\e[1m=== Starting services ===\e[0m'
-CMD bash /home/root/init.sh && /bin/sh
+# CMD bash /home/root/init.sh && /bin/sh
 
 
 # EXPOSE 3306
