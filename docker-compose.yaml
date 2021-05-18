@@ -5,7 +5,7 @@ services:
   db:
     build: ./mariadb/
     container_name: mysql
-    entrypoint: sh /home/root/init.sh
+    entrypoint: sh home/root/init.sh
     command: tail -F anything
     ports:
       - '3306:3306'
