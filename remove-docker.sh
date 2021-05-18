@@ -9,3 +9,4 @@ sudo rm /usr/local/bin/docker-compose
 sudo rm /etc/docker
 sudo rm -rf ~/.docker
 sudo rm $(which docker-compose)
+docker volume rm wordpress-lemp-docker_mysql-dump
